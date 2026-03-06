@@ -38,7 +38,7 @@
             pkgs.cmake
             pkgs.ninja
             pkgs.protobuf
-            (pkgs.python313.withPackages (python-pkgs: [
+            (pkgs.python310.withPackages (python-pkgs: [
                 python-pkgs.grpcio-tools
                 python-pkgs.uv
             ]))
