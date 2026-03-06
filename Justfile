@@ -83,7 +83,8 @@ _clone name remote rev:
     if [ -d "$dir/.git" ]; then
         echo "{{name}} already exists"
     else
-        git clone --branch "{{rev}}" "$base/{{name}}.git" "$dir"
+        git clone "$base/{{name}}.git" "$dir"
+        git -C "$dir" checkout "{{rev}}"
     fi
 
 _build board shield snippet cmake_args artifact *west_args:
