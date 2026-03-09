@@ -1,3 +1,4 @@
+default:
 manifest:
   remotes:
     - name: zmkfirmware
@@ -9,13 +10,13 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: 4ec69cb
       import: app/west.yml
+      revision: 8feeb52e
     - name: zmk-dongle-display
       remote: englmaxi
-      revision: v0.3
+      revision: 2bb333f
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: 77635ba
+      revision: a1a0f35
   self:
     path: config
