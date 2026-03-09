@@ -12,13 +12,12 @@ include:
 
     # Charybdis.
   - board: nice_nano//zmk
-    shield: charybdis_dongle
+    shield: charybdis_dongle dongle_display
     snippet: studio-rpc-usb-uart
     artifact-name: charybdis_dongle
 
   - board: nice_nano//zmk
-    shield: charybdis_right
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    shield: charybdis_right_dongle
     artifact-name: charybdis_peripheral_right
 
   - board: nice_nano//zmk

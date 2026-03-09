@@ -1,17 +1,36 @@
-if SHIELD_CHARYBDIS_RIGHT
+if SHIELD_CHARYBDIS_RIGHT || SHIELD_CHARYBDIS_DONGLE
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
 
-# Name must be less than 16 characters long!
-config ZMK_KEYBOARD_NAME
-    default "Charybdis"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
+    config ZMK_KEYBOARD_NAME
+        default "Charybdis"
 endif
 
-if SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT
+if SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT || SHIELD_CHARYBDIS_RIGHT_DONGLE || SHIELD_CHARYBDIS_DONGLE
+    config ZMK_SPLIT
+        default y
+endif
 
-config ZMK_SPLIT
-    default y
+if SHIELD_CHARYBDIS_RIGHT || SHIELD_CHARYBDIS_RIGHT_DONGLE || SHIELD_CHARYBDIS_DONGLE
+    config ZMK_POINTING
+        default y
+    config INPUT
+        default y
+endif
 
+if SHIELD_CHARYBDIS_RIGHT || SHIELD_CHARYBDIS_RIGHT_DONGLE
+    config SPI
+        default y
+    config PMW3610_ALT
+        default y
+endif
+
+if SHIELD_CHARYBDIS_DONGLE
+if ZMK_DISPLAY
+    config I2C
+        default y
+
+    config SSD1306
+        default y
+endif
 endif
