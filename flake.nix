@@ -45,6 +45,7 @@
 
             pkgs.just
             pkgs.yq
+            pkgs.keymap-drawer
           ];
         };
       }
