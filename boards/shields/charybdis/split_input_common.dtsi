@@ -1,4 +1,33 @@
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 / {
+    input_processors {
+        tb_off: tb_off {
+            compatible = "zmk,input-processor-code-mapper";
+            #input-processor-cells = <0>;
+            type = <INPUT_EV_REL>;
+            map = <
+                INPUT_REL_X      INPUT_REL_MISC
+                INPUT_REL_Y      INPUT_REL_MISC
+                INPUT_REL_WHEEL  INPUT_REL_MISC
+                INPUT_REL_HWHEEL INPUT_REL_MISC
+            >;
+        };
+
+        tb_on: tb_on {
+            compatible = "zmk,input-processor-code-mapper";
+            #input-processor-cells = <0>;
+            type = <INPUT_EV_REL>;
+            map = <
+                INPUT_REL_X      INPUT_REL_X
+                INPUT_REL_Y      INPUT_REL_Y
+                INPUT_REL_WHEEL  INPUT_REL_WHEEL
+                INPUT_REL_HWHEEL INPUT_REL_HWHEEL
+            >;
+        };
+    };
+
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -13,5 +42,16 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_split>;
+        input-processors = <&tb_off>;
+
+        /* Enable normal trackball input only on the MOUSE/GAME layer */
+        mouse_layer {
+            layers = <3>;
+            input-processors = <&tb_on>;
+        };
+        game_layer {
+            layers = <6>;
+            input-processors = <&tb_on>;
+        };
     };
 };
