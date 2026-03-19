@@ -138,8 +138,8 @@
         sym {
             display-name = "Sym";
             bindings = <
-&kp LBRC  &kp AMPS   &kp KP_MULTIPLY &none     &kp RBRC      /**/   &none &none      &none     &none    &none
-&kp COLON &kp DOLLAR &kp PRCNT       &kp CARET &kp KP_PLUS   /**/   &none &kp RSHIFT &kp RCTRL &kp RALT &kp RGUI
+&kp LBRC  &kp AMPS   &kp KP_MULTIPLY &kp LPAR  &kp RBRC      /**/   &none &none      &none     &none    &none
+&kp DQT   &kp DOLLAR &kp PRCNT       &kp CARET &kp KP_PLUS   /**/   &none &kp RSHIFT &kp RCTRL &kp RALT &kp RGUI
 &kp TILDE &kp EXCL   &kp AT          &kp HASH  &kp PIPE      /**/   &none &none      &none     &none    &none
                      &kp LPAR        &kp RPAR  &kp UNDER     /**/   &none &none
             >;
@@ -149,7 +149,7 @@
             display-name = "Num";
             bindings = <
 &kp LBKT  &kp N7 &kp N8  &kp N9 &kp RBKT    /**/   &none &none      &none     &none    &none
-&kp SEMI  &kp N4 &kp N5  &kp N6 &kp EQUAL   /**/   &none &kp RSHIFT &kp RCTRL &kp RALT &kp RGUI
+&kp SQT   &kp N4 &kp N5  &kp N6 &kp EQUAL   /**/   &none &kp RSHIFT &kp RCTRL &kp RALT &kp RGUI
 &kp GRAVE &kp N1 &kp N2  &kp N3 &kp BSLH    /**/   &none &none      &none     &none    &none
                  &kp DOT &kp N0 &kp MINUS   /**/   &none &none
             >;
